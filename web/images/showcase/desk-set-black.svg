@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="260" viewBox="0 0 420 260" role="img" aria-label="Настольный набор черного цвета">
+  <rect width="420" height="260" fill="#fff"/>
+  <g transform="translate(42 58)">
+    <path d="M90 92h176l24 56H66z" fill="#20242b"/>
+    <path d="M90 92h176l9 20H81z" fill="#2b3139"/>
+    <g fill="#5b3426">
+      <path d="M0 30h82v56H0z"/>
+      <path d="M10 40h62v35H10z" fill="#dbe4ea"/>
+      <path d="M286 53h48v40h-48z"/>
+      <path d="M298 30h22v23h-22z"/>
+      <path d="M315 28h20v25h-20z"/>
+    </g>
+    <g fill="#7b4a36">
+      <path d="M86 50h96v12H86z"/>
+      <path d="M236 42h13v66h-13z" transform="rotate(18 242.5 75)"/>
+      <path d="M278 43h13v66h-13z" transform="rotate(18 284.5 76)"/>
+    </g>
+    <rect x="126" y="116" width="58" height="38" fill="#f8fafc" transform="rotate(-11 155 135)"/>
+    <path d="M140 128c15 16 28 17 38 26" fill="none" stroke="#1f252d" stroke-width="2"/>
+    <rect x="33" y="98" width="42" height="20" fill="#6a3c2a" transform="rotate(-22 54 108)"/>
+    <rect x="41" y="99" width="25" height="13" fill="#d7c6a7" transform="rotate(-22 54 108)"/>
+  </g>
+</svg>

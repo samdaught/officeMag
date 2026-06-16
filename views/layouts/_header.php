@@ -6,59 +6,58 @@ declare(strict_types=1);
 
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
-use yii\helpers\Html;
 
 $items = [
     [
-        'label' => 'Home',
-        'url' => ['/site/index'],
+        'label' => 'Текст',
+        'url' => ['/yii2/text'],
     ],
     [
-        'label' => 'About',
-        'url' => ['/site/about'],
+        'label' => 'Форма',
+        'url' => ['/yii2/form'],
     ],
     [
-        'label' => 'Contact',
-        'url' => ['/site/contact'],
+        'label' => 'Кнопки',
+        'url' => ['/yii2/buttons'],
     ],
     [
-        'label' => 'Login',
-        'url' => ['/site/login'],
-        'visible' => Yii::$app->user->isGuest,
+        'label' => 'Схема',
+        'url' => ['/yii2/scheme'],
     ],
     [
-        'label' => 'Logout (' . Html::encode(Yii::$app->user->identity?->username ?? '') . ')',
-        'url' => ['/site/logout'],
-        'linkOptions' => [
-            'data-method' => 'post',
-            'class' => 'nav-link logout',
-        ],
-        'visible' => !Yii::$app->user->isGuest,
+        'label' => 'Витрина',
+        'url' => ['/yii2/slider'],
+    ],
+    [
+        'label' => 'Переключатель',
+        'url' => ['/yii2/toggle'],
+    ],
+    [
+        'label' => 'Красивая кнопка',
+        'url' => ['/yii2/beauty'],
+    ],
+    [
+        'label' => 'Чёрная страница',
+        'url' => ['/yii2/black-page'],
     ],
 ];
 
 ?>
+
 <header id="header">
     <?php NavBar::begin(
         [
             'brandLabel' => Yii::$app->name,
             'brandUrl' => Yii::$app->homeUrl,
-            'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
+            'options' => ['class' => 'navbar-expand-md navbar-dark office-header'],
+            'innerContainerOptions' => ['class' => 'office-header__inner'],
         ],
     ) ?>
     <?= Nav::widget(
         [
-            'options' => ['class' => 'navbar-nav me-auto'],
+            'options' => ['class' => 'navbar-nav ms-auto'],
             'encodeLabels' => false,
             'items' => $items,
-        ],
-    ) ?>
-    <?= Html::button(
-        '&#127769;',
-        [
-            'id' => 'theme-toggle',
-            'class' => 'btn btn-link nav-link fs-5',
-            'aria-label' => 'Switch to dark mode',
         ],
     ) ?>
     <?php NavBar::end() ?>
