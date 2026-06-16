@@ -10,7 +10,13 @@ class SiteController extends Controller
 {
     public function actionIndex(): string
     {
-        $this->layout = "blank";
+        $this->layout = 'blank';
         return $this->render('index');
+    }
+
+    public function actionReact(): string
+    {
+        $this->layout = 'blank';
+        return $this->render('react');
     }
 }

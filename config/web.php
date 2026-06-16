@@ -34,6 +34,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'react/<path:.+>' => 'site/react',
+                'react' => 'site/react',
             ],
         ],
     ],

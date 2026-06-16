@@ -5,9 +5,9 @@
 use app\assets\AppAsset;
 use yii\helpers\Html;
 
-$this->title = 'Офисмаг тестовое задание';
-$this->params['meta_description'] = 'Тестовое задание на frontend-позицию: самописный HTML, CSS, JavaScript и React-компоненты.';
-$this->params['meta_keywords'] = 'офисмаг, frontend, html, css, javascript, react, тестовое задание';
+$this->title = 'ОфисМаг: тестовое задание';
+$this->params['meta_description'] = 'Тестовое задание на фронтенд-позицию: HTML, CSS, JavaScript, Yii2 и React.';
+$this->params['meta_keywords'] = 'ОфисМаг, фронтенд, HTML, CSS, JavaScript, React, тестовое задание';
 $this->registerCssFile('@web/css/home.css', ['depends' => [AppAsset::class]]);
 ?>
 
@@ -15,18 +15,18 @@ $this->registerCssFile('@web/css/home.css', ['depends' => [AppAsset::class]]);
     <div class="hero-banner__content">
 
         <h1 id="hero-title" class="hero-banner__title">
-            Тестовое задание для Офисмаг
+            Тестовое задание для ОфисМаг
         </h1>
         <ul class="hero-banner__highlights" aria-label="Что показывает проект">
-            <li>Vanilla: чистая верстка, стили и интерактивность без UI-фреймворка</li>
-            <li>React: реализация на компонентах и управляемом состоянии</li>
-            <li>Yii2/PHP: вспомогательная интеграция для демонстрации серверного контекста</li>
+            <li>Yii2-версия: чистая вёрстка, стили и интерактивность без UI-фреймворка</li>
+            <li>React-версия: те же страницы, собранные из компонентов</li>
+            <li>Общий стиль: одинаковые страницы, изображения и поведение в обеих версиях</li>
         </ul>
 
         <div class="hero-banner__actions" aria-label="Выбор реализации">
             <?= Html::a(
-                'Смотреть vanilla',
-                '/yii2/index',
+                'Yii2-версия',
+                '/yii2/text',
                 [
                     'class' => 'btn btn-primary btn-lg hero-banner__button',
                     'rel' => 'noopener',
@@ -35,7 +35,7 @@ $this->registerCssFile('@web/css/home.css', ['depends' => [AppAsset::class]]);
 
             <?= Html::a(
                 'React-версия',
-                '#',
+                '/react',
                 [
                     'class' => 'btn btn-outline-dark btn-lg hero-banner__button',
                     'rel' => 'noopener',

@@ -1,0 +1,149 @@
+.toggle-page {
+    display: grid;
+    justify-items: center;
+    gap: 28px;
+    min-height: 560px;
+    margin: 0 auto 56px;
+    padding: 56px 24px;
+    color: #202733;
+}
+
+.toggle-page h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.power-toggle {
+    position: relative;
+    display: inline-grid;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.power-toggle__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.power-toggle__body {
+    position: relative;
+    display: block;
+    width: 254px;
+    height: 150px;
+    border-radius: 999px;
+    background:
+        linear-gradient(145deg, #ffffff 0%, #eeeef0 52%, #d5d5d9 100%);
+    box-shadow:
+        0 26px 38px rgba(74, 67, 77, 0.28),
+        inset 0 8px 12px rgba(255, 255, 255, 0.86),
+        inset 0 -12px 18px rgba(106, 105, 114, 0.18);
+    transition:
+        box-shadow 0.35s ease,
+        transform 0.35s ease;
+}
+
+.power-toggle__body::before {
+    content: "";
+    position: absolute;
+    inset: 31px 31px;
+    border-radius: 999px;
+    background:
+        linear-gradient(180deg, #6e151e 0%, #bd222c 45%, #e64648 100%);
+    box-shadow:
+        inset 0 8px 16px rgba(40, 5, 8, 0.5),
+        inset 0 -5px 12px rgba(255, 104, 106, 0.25);
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.power-toggle__glow {
+    position: absolute;
+    inset: 34px 38px 34px 108px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 88, 88, 0.42), transparent 64%);
+    opacity: 0.68;
+    transition:
+        transform 0.45s cubic-bezier(0.2, 0.9, 0.2, 1),
+        background 0.35s ease;
+}
+
+.power-toggle__knob {
+    position: absolute;
+    top: 29px;
+    left: 28px;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 34% 24%, rgba(255, 158, 166, 0.98) 0 11%, transparent 33%),
+        radial-gradient(circle at 38% 30%, #ff6870 0%, #e93845 44%, #bd1f2b 72%, #8d1520 100%);
+    box-shadow:
+        0 12px 18px rgba(69, 10, 19, 0.42),
+        inset -12px -16px 22px rgba(106, 11, 20, 0.36),
+        inset 8px 8px 18px rgba(255, 133, 142, 0.54);
+    transition:
+        transform 0.45s cubic-bezier(0.2, 0.9, 0.2, 1),
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.power-toggle__input:checked + .power-toggle__body::before {
+    background:
+        linear-gradient(180deg, #306e1f 0%, #55a735 48%, #79cf4f 100%);
+    box-shadow:
+        inset 0 8px 16px rgba(15, 55, 6, 0.48),
+        inset 0 -5px 12px rgba(166, 255, 128, 0.24);
+}
+
+.power-toggle__input:checked + .power-toggle__body .power-toggle__glow {
+    transform: translateX(-80px);
+    background: radial-gradient(circle at 50% 50%, rgba(137, 230, 90, 0.42), transparent 64%);
+}
+
+.power-toggle__input:checked + .power-toggle__body .power-toggle__knob {
+    transform: translateX(104px);
+    background:
+        radial-gradient(circle at 34% 24%, rgba(190, 255, 160, 0.98) 0 11%, transparent 33%),
+        radial-gradient(circle at 38% 30%, #91e866 0%, #5cbd3d 44%, #3c8b2a 72%, #27651e 100%);
+    box-shadow:
+        0 12px 18px rgba(26, 78, 18, 0.36),
+        inset -12px -16px 22px rgba(31, 92, 22, 0.34),
+        inset 8px 8px 18px rgba(180, 255, 145, 0.48);
+}
+
+.power-toggle__input:focus + .power-toggle__body {
+    outline: 4px solid rgba(41, 114, 255, 0.35);
+    outline-offset: 8px;
+}
+
+.power-toggle__input:focus:not(:focus-visible) + .power-toggle__body {
+    outline: 0;
+}
+
+.power-toggle__input:focus-visible + .power-toggle__body {
+    outline: 4px solid rgba(41, 114, 255, 0.35);
+    outline-offset: 8px;
+}
+
+.power-toggle:active .power-toggle__body {
+    transform: scale(0.985);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .power-toggle__body,
+    .power-toggle__body::before,
+    .power-toggle__glow,
+    .power-toggle__knob {
+        transition: none;
+    }
+}

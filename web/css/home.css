@@ -1,10 +1,10 @@
 .hero-banner {
     position: relative;
     isolation: isolate;
-    display: flex;
+    display: grid;
     align-items: center;
-    min-height: 460px;
-    min-height: clamp(460px, 62vh, 640px);
+    min-height: 520px;
+    min-height: clamp(520px, 58vh, 640px);
     margin: 32px 0 48px;
     overflow: hidden;
     border: 1px solid rgba(137, 154, 178, 0.22);
@@ -13,20 +13,13 @@
         linear-gradient(
             90deg,
             rgba(255, 255, 255, 0.98) 0%,
-            rgba(255, 255, 255, 0.92) 34%,
-            rgba(255, 255, 255, 0.36) 64%,
-            rgba(255, 255, 255, 0.04) 100%
+            rgba(255, 255, 255, 0.95) 42%,
+            rgba(255, 255, 255, 0.58) 66%,
+            rgba(255, 255, 255, 0.18) 100%
         ),
+        url("../images/herobanner.png") right center / 68% auto no-repeat,
         #f7fbff;
     box-shadow: 0 24px 70px rgba(37, 58, 87, 0.16);
-}
-
-.hero-banner::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: url("../images/herobanner.png") right center / contain no-repeat;
 }
 
 .hero-banner::before {
@@ -42,9 +35,10 @@
 .hero-banner__content {
     position: relative;
     z-index: 2;
-    max-width: 560px;
+    width: min(620px, 62%);
+    max-width: 620px;
     padding: 32px;
-    padding: clamp(32px, 7vw, 76px);
+    padding: clamp(32px, 6vw, 72px);
 }
 
 .hero-banner__title {
@@ -57,15 +51,6 @@
     line-height: 0.98;
     letter-spacing: 0;
     overflow-wrap: break-word;
-}
-
-.hero-banner__text {
-    max-width: 470px;
-    margin: 24px 0 0;
-    color: #526172;
-    font-size: 18px;
-    font-size: clamp(18px, 2vw, 22px);
-    line-height: 1.5;
 }
 
 .hero-banner__highlights {
@@ -98,16 +83,25 @@
 }
 
 .hero-banner__actions {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+    max-width: 440px;
     margin-top: 34px;
 }
 
 .hero-banner__button {
-    min-width: 176px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 48px;
+    padding: 10px 14px;
     border-radius: 8px;
     font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
 }
 
 .hero-banner .btn-primary {
@@ -124,22 +118,11 @@
 
 @media (max-width: 991px) {
     .hero-banner {
-        min-height: 560px;
-        align-items: flex-end;
+        min-height: auto;
         background:
-            linear-gradient(
-                0deg,
-                rgba(255, 255, 255, 0.98) 0%,
-                rgba(255, 255, 255, 0.94) 44%,
-                rgba(255, 255, 255, 0.24) 84%,
-                rgba(255, 255, 255, 0) 100%
-            ),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.9) 56%, rgba(255, 255, 255, 0.5) 100%),
+            url("../images/herobanner.png") right center / 86% auto no-repeat,
             #f7fbff;
-    }
-
-    .hero-banner::after {
-        background-position: top center;
-        background-size: 100% auto;
     }
 
     .hero-banner::before {
@@ -147,32 +130,29 @@
     }
 
     .hero-banner__content {
-        max-width: none;
-        padding: 300px 28px 36px;
+        width: min(640px, 78%);
+        max-width: 640px;
+        padding: 44px 28px;
     }
 }
 
 @media (max-width: 575px) {
     .hero-banner {
-        min-height: 620px;
         margin: 20px 0 36px;
         background:
             linear-gradient(
-                0deg,
-                rgba(255, 255, 255, 0.99) 0%,
-                rgba(255, 255, 255, 0.96) 52%,
-                rgba(255, 255, 255, 0.28) 86%,
-                rgba(255, 255, 255, 0) 100%
+                90deg,
+                rgba(255, 255, 255, 0.98) 0%,
+                rgba(255, 255, 255, 0.92) 70%,
+                rgba(255, 255, 255, 0.72) 100%
             ),
+            url("../images/herobanner.png") 58% center / auto 100% no-repeat,
             #f7fbff;
     }
 
-    .hero-banner::after {
-        background-size: 100% auto;
-    }
-
     .hero-banner__content {
-        padding: 280px 22px 30px;
+        width: 100%;
+        padding: 30px 22px;
     }
 
     .hero-banner__title {
@@ -180,8 +160,13 @@
         line-height: 1.04;
     }
 
-    .hero-banner__actions,
+    .hero-banner__actions {
+        gap: 10px;
+    }
+
     .hero-banner__button {
-        width: 100%;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 15px;
     }
 }

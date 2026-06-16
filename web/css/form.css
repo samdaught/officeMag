@@ -1,0 +1,441 @@
+.form-page {
+    max-width: 760px;
+    margin: 36px auto 72px;
+    padding: 36px 49px 56px;
+    border: 1px solid #d2d2d2;
+    background: #eeeeee;
+    color: #1d2430;
+}
+
+.form-page__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.form-page__header h1,
+.form-page__header p,
+.form-card h2 {
+    margin: 0;
+}
+
+.form-page__header h1 {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.form-page__header p {
+    color: #1d2430;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.form-card {
+    position: relative;
+    z-index: 0;
+    margin-top: 26px;
+    margin-bottom: 30px;
+    border: 1px solid #d7d7d7;
+    background: #f7f7f7;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.08),
+        0 5px 10px rgba(0, 0, 0, 0.06);
+}
+
+.form-card::before,
+.form-card::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    height: 5px;
+    border: 1px solid #cfcfcf;
+    border-top: 0;
+    background: #f4f4f4;
+    pointer-events: none;
+}
+
+.form-card::before {
+    right: 4px;
+    bottom: -5px;
+    left: 4px;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.1),
+        0 5px 8px -7px rgba(0, 0, 0, 0.28);
+}
+
+.form-card::after {
+    right: 9px;
+    bottom: -9px;
+    left: 9px;
+    background: #eeeeee;
+    box-shadow:
+        0 3px 0 -1px #e4e4e4,
+        0 6px 8px -7px rgba(0, 0, 0, 0.26);
+}
+
+.form-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.form-card h2 {
+    padding: 24px 28px 12px;
+    background: #f7f7f7;
+    color: #1d2430;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.form {
+    display: block;
+    display: grid;
+    gap: 0;
+    margin: 0;
+}
+
+.form__fieldset {
+    display: block;
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    padding: 20px 55px 24px;
+    border: 0;
+    background: #ffffff;
+}
+
+.form__fieldset--extra {
+    position: relative;
+    border-bottom: 1px solid #e6df9d;
+    background: #fff8c8;
+    box-shadow:
+        inset 0 -8px 12px -15px rgba(0, 0, 0, 0.24),
+        0 9px 12px -14px rgba(0, 0, 0, 0.3);
+}
+
+.form__fieldset legend {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0 0 16px;
+    padding: 0;
+    color: #1d2430;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.form__fieldset legend + * {
+    clear: both;
+}
+
+.form__field,
+.yii-field {
+    display: flex;
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    margin: 0;
+}
+
+.yii-field.mb-3 {
+    margin-bottom: 0 !important;
+}
+
+.form__field > span,
+.form__label,
+.yii-field > label {
+    padding-top: 8px;
+    color: #1d2430;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.35;
+    text-align: right;
+}
+
+.form__field input:not([type="color"]),
+.form__field textarea,
+.form .form-control {
+    width: 100%;
+    min-height: 30px;
+    padding: 5px 7px;
+    border: 1px solid #d7d7d7;
+    border-radius: 0;
+    background: #ffffff;
+    color: #1d2430;
+    font-size: 14px;
+    line-height: 1.35;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.form__field textarea,
+.form textarea.form-control {
+    min-height: 66px;
+    resize: vertical;
+}
+
+.form__field input:focus,
+.form__field textarea:focus,
+.form .form-control:focus {
+    border-color: #8d7ce8;
+    outline: 0;
+    box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, 0.04),
+        0 0 0 3px rgba(117, 91, 231, 0.16);
+}
+
+.form__color-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form__color-row input[type="color"],
+.form input[type="color"].form-control,
+.form .form__color-input {
+    width: 52px;
+    height: 30px;
+    min-height: 30px;
+    padding: 3px;
+    border: 1px solid #d7d7d7;
+    border-radius: 0;
+    background: #ffffff;
+}
+
+.form__color-value {
+    color: #5d6472;
+    font-family:
+        ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+        monospace;
+    font-size: 13px;
+}
+
+.form__bottom {
+    display: block;
+    display: grid;
+    gap: 16px;
+    padding: 26px 55px 30px 204px;
+    background: #f7f7f7;
+}
+
+.form__choice,
+.form__choice-wrap {
+    display: flex;
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr);
+    align-items: start;
+    gap: 6px;
+    color: #1d2430;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.form__choice {
+    margin: 0;
+    font-weight: 400;
+}
+
+.form__choice input,
+.form__choice-wrap .form-check-input {
+    width: 15px;
+    height: 15px;
+    margin: 3px 0 0;
+    border-color: #c8c8c8;
+    accent-color: #8b62e6;
+}
+
+.form__choice--checkbox input,
+.form__choice-wrap--checkbox .form-check-input {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #c8c8c8;
+    border-radius: 2px;
+    background: #ffffff;
+}
+
+.form__choice--checkbox input:checked,
+.form__choice-wrap--checkbox .form-check-input:checked {
+    background:
+        linear-gradient(45deg, transparent 54%, #8b62e6 54% 66%, transparent 66%),
+        linear-gradient(-45deg, transparent 42%, #8b62e6 42% 54%, transparent 54%),
+        #ffffff;
+}
+
+.form a {
+    color: #1436c8;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.form__submit {
+    justify-self: start;
+    min-height: 44px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 4px;
+    background: linear-gradient(#9d81f0, #593bd8);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 3px 0 #3d2ea1,
+        0 7px 14px rgba(57, 45, 150, 0.26);
+}
+
+.form__submit:hover,
+.form__submit:focus {
+    background: linear-gradient(#a98ff4, #6243df);
+}
+
+.form__submit:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 1px 0 #3d2ea1,
+        0 4px 10px rgba(57, 45, 150, 0.24);
+}
+
+.form__message,
+.form__server-result {
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px solid #d8e2ef;
+    background: #ffffff;
+    color: #1d2430;
+    font-size: 14px;
+}
+
+.form__message:empty {
+    display: none;
+}
+
+.form__server-result {
+    margin: 22px 55px 0;
+}
+
+.form__server-result dl {
+    display: block;
+    display: grid;
+    gap: 8px;
+    margin: 10px 0 0;
+}
+
+.form__server-result dl div {
+    display: flex;
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 12px;
+}
+
+@supports not (display: grid) {
+    .form__fieldset > * + *,
+    .form__bottom > * + *,
+    .form__server-result dl > * + * {
+        margin-top: 14px;
+    }
+
+    .form__field,
+    .yii-field,
+    .form__choice,
+    .form__choice-wrap,
+    .form__server-result dl div {
+        gap: 0;
+    }
+
+    .form__field > span,
+    .form__label,
+    .yii-field > label {
+        flex: 0 0 180px;
+        margin-right: 16px;
+    }
+
+    .form__choice input,
+    .form__choice-wrap .form-check-input {
+        flex: 0 0 15px;
+        margin-right: 6px;
+    }
+}
+
+.form__server-result dt {
+    color: #5d6472;
+    font-weight: 700;
+}
+
+.form__server-result dd {
+    margin: 0;
+}
+
+.form__error {
+    grid-column: 2;
+    margin-top: 4px;
+}
+
+.form--yii .form-check-label {
+    margin: 0;
+}
+
+.form--yii .form-check-input {
+    float: none;
+}
+
+@media (max-width: 767px) {
+    .form-page {
+        margin: 24px auto 52px;
+        padding: 24px 16px 42px;
+    }
+
+    .form-page__header {
+        display: block;
+    }
+
+    .form-page__header p {
+        margin-top: 8px;
+    }
+
+    .form__fieldset,
+    .form__bottom {
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+
+    .form__bottom {
+        padding-top: 24px;
+    }
+
+    .form__field,
+    .yii-field {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .form__field > span,
+    .form__label,
+    .yii-field > label {
+        padding-top: 0;
+        text-align: left;
+    }
+
+    .form__bottom {
+        padding-left: 22px;
+    }
+
+    .form__server-result {
+        margin-right: 22px;
+        margin-left: 22px;
+    }
+
+    .form__server-result dl div {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+}
