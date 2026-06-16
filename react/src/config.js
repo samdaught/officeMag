@@ -8,5 +8,6 @@ function joinUrl(base, path) {
 }
 
 export const routerBaseUrl = config.routerBaseUrl || '/react-app';
+export const homeUrl = config.homeUrl || '/';
 export const imageRootUrl = config.imageRootUrl || '/images';
 export const imageBaseUrl = config.imageBaseUrl || joinUrl(imageRootUrl, 'showcase');

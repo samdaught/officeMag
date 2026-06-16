@@ -20,6 +20,7 @@ $this->registerCssFile('@web/css/black-page.css', $assetDepends);
 $this->registerCssFile('@web/css/react.css', $assetDepends);
 
 $config = [
+    'homeUrl' => Yii::$app->homeUrl,
     'imageRootUrl' => Yii::getAlias('@web/images'),
     'imageBaseUrl' => Yii::getAlias('@web/images/showcase'),
     'routerBaseUrl' => Yii::getAlias('@web/react'),
