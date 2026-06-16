@@ -1,0 +1,148 @@
+.slider-page {
+    max-width: 1164px;
+    margin: 24px auto 64px;
+    color: #1e2a36;
+}
+
+.slider-page__header {
+    margin-bottom: 26px;
+}
+
+.slider-page__header h1,
+.slider-page__header p,
+.slider-section h2,
+.product-card h3 {
+    margin: 0;
+}
+
+.slider-page__header h1 {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.slider-page__header p {
+    max-width: 760px;
+    margin-top: 10px;
+    color: #526172;
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.slider-section {
+    margin-top: 36px;
+}
+
+.slider-section h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.slider-track {
+    overflow: hidden;
+}
+
+.slider-track__list {
+    display: flex;
+    display: grid;
+    grid-auto-columns: 291px;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.slider-track__list::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card {
+    display: grid;
+    grid-template-rows: 260px minmax(120px, auto);
+    flex: 0 0 291px;
+    width: 291px;
+    border: 1px solid #ededed;
+    background: #ffffff;
+}
+
+.product-card__image {
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    padding: 24px;
+}
+
+.product-card h3 {
+    padding: 0 24px 28px;
+    color: #263747;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.slider-scrollbar {
+    position: relative;
+    height: 13px;
+    margin-top: 18px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e4e4e4;
+}
+
+.slider-scrollbar span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    min-width: 42px;
+    height: 100%;
+    border-radius: inherit;
+    background: #9b101a;
+    cursor: grab;
+    transform: translateX(0);
+}
+
+.slider-scrollbar span:active {
+    cursor: grabbing;
+}
+
+.slider-track__list--drag {
+    cursor: grab;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+@supports not (display: grid) {
+    .slider-track__list {
+        display: flex;
+    }
+}
+
+.slider-track__list--drag.is-dragging {
+    cursor: grabbing;
+}
+
+.slider-track__list--drag.is-dragging .product-card {
+    pointer-events: none;
+}
+
+@media (max-width: 767px) {
+    .slider-page {
+        max-width: 100%;
+        margin: 20px auto 48px;
+    }
+
+    .slider-track__list {
+        grid-auto-columns: 76vw;
+    }
+
+    .product-card {
+        flex-basis: 76vw;
+        width: 76vw;
+    }
+}

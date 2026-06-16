@@ -1,0 +1,191 @@
+.react-shell {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 0 64px;
+}
+
+.react-shell--black-page {
+    max-width: none;
+    padding-bottom: 0;
+}
+
+.react-shell__header {
+    position: relative;
+    z-index: 20;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-bottom: 0;
+    background: #e82111;
+}
+
+.react-shell__header-inner {
+    position: relative;
+    width: min(1120px, calc(100% - 24px));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 18px;
+}
+
+.react-shell__brand {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-decoration: none;
+}
+
+.react-shell__menu {
+    display: none;
+    width: 44px;
+    height: 40px;
+    margin-left: auto;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.react-shell__menu span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px auto;
+    border-radius: 999px;
+    background: currentColor;
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+}
+
+.react-shell__menu:hover,
+.react-shell__menu:focus {
+    border-color: rgba(255, 255, 255, 0.52);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.react-shell__menu:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.28);
+    outline-offset: 2px;
+}
+
+.react-shell__menu:focus:not(:focus-visible) {
+    outline: 0;
+}
+
+.react-shell__menu:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.28);
+    outline-offset: 2px;
+}
+
+.react-shell__menu.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.react-shell__menu.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.react-shell__menu.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.react-shell__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.react-shell__nav a {
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.react-shell__nav a.is-active {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+}
+
+.react-shell__nav a:hover,
+.react-shell__nav a:focus {
+    border-color: rgba(255, 255, 255, 0.48);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+.react-shell__nav a.is-active:hover,
+.react-shell__nav a.is-active:focus {
+    color: #ffffff;
+}
+
+.form__submit[disabled] {
+    opacity: 0.62;
+    cursor: default;
+    transform: none;
+}
+
+.form__message--success {
+    border-color: #cfe6bd;
+    background: #f8fff2;
+}
+
+@media (max-width: 767px) {
+    .react-shell {
+        padding-top: 0;
+    }
+
+    .react-shell__header-inner {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .react-shell__brand {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .react-shell__menu {
+        display: block;
+    }
+
+    .react-shell__nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 30;
+        display: none;
+        width: 100%;
+        padding: 10px 0 12px;
+        background: #e82111;
+        box-shadow: 0 16px 24px rgba(25, 25, 25, 0.22);
+        justify-content: flex-start;
+    }
+
+    .react-shell__nav.is-open {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .react-shell__nav a {
+        padding: 10px 12px;
+        line-height: 1.2;
+    }
+}

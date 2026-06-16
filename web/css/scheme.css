@@ -1,0 +1,137 @@
+.scheme-page {
+    max-width: 1016px;
+    margin: 0 auto 48px;
+    overflow-x: auto;
+}
+
+.scheme-canvas {
+    position: relative;
+    width: 986px;
+    height: 762px;
+    min-width: 986px;
+    background: #2d333c;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.scheme-canvas h1 {
+    position: absolute;
+    top: 18px;
+    left: 23px;
+    z-index: 2;
+    margin: 0;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.scheme-lines {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 986px;
+    height: 762px;
+    color: #aeb4bb;
+    overflow: visible;
+}
+
+.scheme-line {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+
+.scheme-card {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    min-height: 41px;
+    padding: 8px 14px;
+    background: #ffffff;
+    color: #020314;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.scheme-card--alliksaar {
+    top: 97px;
+    left: 23px;
+}
+
+.scheme-card--du-hast {
+    top: 87px;
+    left: 743px;
+    min-height: 62px;
+}
+
+.scheme-card--shirinkina {
+    top: 169px;
+    left: 743px;
+}
+
+.scheme-card--klitotehnis {
+    top: 230px;
+    left: 143px;
+    min-height: 62px;
+}
+
+.scheme-card--troyan {
+    top: 240px;
+    left: 743px;
+}
+
+.scheme-card--vodolazskaya {
+    top: 312px;
+    left: 263px;
+    min-height: 62px;
+}
+
+.scheme-card--borgdorf {
+    top: 394px;
+    left: 263px;
+}
+
+.scheme-card--vozinguy {
+    top: 394px;
+    left: 743px;
+}
+
+.scheme-card--boltushkina {
+    top: 455px;
+    left: 743px;
+}
+
+.scheme-card--visolkin {
+    top: 516px;
+    left: 743px;
+}
+
+.scheme-card--brus {
+    top: 577px;
+    left: 263px;
+}
+
+.scheme-card--zverek {
+    top: 638px;
+    left: 143px;
+}
+
+.scheme-card--stroy {
+    top: 699px;
+    left: 143px;
+}
+
+@media (max-width: 1015px) {
+    .scheme-page {
+        max-width: 100%;
+        padding-bottom: 12px;
+    }
+}
