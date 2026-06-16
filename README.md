@@ -1,234 +1,300 @@
-<p align="center">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://www.yiiframework.com/image/design/logo/yii3_full_for_dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="https://www.yiiframework.com/image/design/logo/yii3_full_for_light.svg">
-        <img src="https://www.yiiframework.com/image/design/logo/yii3_full_for_light.svg" alt="Yii Framework" height="100">
-    </picture>
-    <h1 align="center">Yii 2 Basic Project Template</h1>
-    <br>
-</p>
+# OfficeMag — тестовое задание
 
-Yii 2 Basic Project Template is a skeleton [Yii 2](https://www.yiiframework.com/) application best for
-rapidly creating small projects.
+Проект выполнен как тестовое задание для **ОфисМаг**. В репозитории представлены две реализации одного набора страниц:
 
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
+- **Yii2-версия** — серверная реализация страниц на Yii2, PHP, HTML, CSS и JavaScript;
+- **React-версия** — клиентская SPA-реализация на React, собранная через Vite;
+- обе версии используют общий визуальный стиль, изображения и одинаковые демонстрационные разделы.
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-basic.svg?style=for-the-badge&label=Stable&logo=packagist)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-basic.svg?style=for-the-badge&label=Downloads)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![build](https://img.shields.io/github/actions/workflow/status/yiisoft/yii2-app-basic/build.yml?style=for-the-badge&logo=github&label=Build)](https://github.com/yiisoft/yii2-app-basic/actions?query=workflow%3Abuild)
-[![codecov](https://img.shields.io/codecov/c/github/yiisoft/yii2-app-basic.svg?style=for-the-badge&logo=codecov&logoColor=white&label=Codecov)](https://codecov.io/gh/yiisoft/yii2-app-basic)
-[![Static Analysis](https://img.shields.io/github/actions/workflow/status/yiisoft/yii2-app-basic/static.yml?style=for-the-badge&label=Static)](https://github.com/yiisoft/yii2-app-basic/actions/workflows/static.yml)
+## Содержание
 
-<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/home-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="docs/images/home-light.png">
-    <img src="docs/images/home-light.png" alt="Web Application Basic">
-</picture>
+- [О проекте](#о-проекте)
+- [Стек](#стек)
+- [Функциональность](#функциональность)
+- [Структура проекта](#структура-проекта)
+- [Быстрый запуск через Docker](#быстрый-запуск-через-docker)
+- [Локальный запуск без Docker](#локальный-запуск-без-docker)
+- [React-сборка](#react-сборка)
+- [Маршруты](#маршруты)
+- [Команды](#команды)
+- [Проверка кода и тесты](#проверка-кода-и-тесты)
+- [Лицензия](#лицензия)
 
-## Docker
+## О проекте
 
-[![Apache](https://img.shields.io/github/actions/workflow/status/yiisoft/yii2-app-basic/docker.yml?style=for-the-badge&logo=apache&label=Apache)](https://github.com/yiisoft/yii2-app-basic/actions/workflows/docker.yml)
+**OfficeMag** — демонстрационный проект, в котором один и тот же набор интерфейсных страниц реализован двумя способами:
 
-DIRECTORY STRUCTURE
--------------------
+1. через классическую серверную отрисовку на **Yii2**;
+2. через компонентный подход на **React**.
 
-      assets/             contains assets definition
-      commands/           contains console commands (controllers)
-      config/             contains application configurations
-      controllers/        contains Web controller classes
-      mail/               contains view files for e-mails
-      models/             contains model classes
-      runtime/            contains files generated during runtime
-      tests/              contains various tests for the basic application
-      vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
-      web/                contains the entry script and Web resources
+Главная страница служит точкой входа и позволяет перейти к нужной версии проекта.
 
-REQUIREMENTS
-------------
+Проект показывает работу с:
 
-The minimum requirement by this project template that your Web server supports PHP 8.2.
+- адаптивной HTML/CSS-вёрсткой;
+- компонентным подходом;
+- формами и валидацией;
+- интерактивными элементами на JavaScript;
+- React Router;
+- сборкой React-приложения через Vite;
+- интеграцией React-сборки внутрь Yii2-приложения.
 
-INSTALLATION
-------------
+## Стек
 
-> [!IMPORTANT]
-> - The minimum required [PHP](https://www.php.net/) version of Yii is PHP `8.2`.
+### Backend / SSR
 
-## Install via Composer
+- PHP 8.2+
+- Yii2
+- Yii2 Bootstrap 5
+- Composer
 
-If you do not have [Composer](https://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](https://getcomposer.org/doc/00-intro.md#installation-nix).
+### Frontend
 
-You can then install this project template using the following command:
+- HTML5
+- CSS3
+- JavaScript
+- React 18
+- React Router DOM
+- Vite
 
-~~~
-composer create-project --prefer-dist yiisoft/yii2-app-basic basic
-~~~
+### Инфраструктура
 
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
+- Docker
+- Docker Compose
+- Apache
 
-~~~
-http://localhost/basic/web/
-~~~
+## Функциональность
 
-## Install from an Archive File
+В проекте реализованы демонстрационные страницы:
 
-Extract the archive file downloaded from [yiiframework.com](https://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
+- **Текст**;
+- **Форма**;
+- **Кнопки**;
+- **Схема**;
+- **Витрина**;
+- **Переключатель**;
+- **Красивая кнопка**;
+- **Чёрная страница**;
 
-Set cookie validation key in `config/web.php` file to some random secret string:
+## Структура проекта
 
-```php
-'request' => [
-    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-    'cookieValidationKey' => '<secret random string goes here>',
-],
+```text
+officeMag/
+├── assets/              # Yii2 asset bundles
+├── commands/            # консольные команды Yii2
+├── config/              # конфигурация приложения
+├── controllers/         # контроллеры Yii2
+├── models/              # модели Yii2
+├── react/               # исходники React-приложения
+│   ├── src/
+│   │   ├── components/  # React-компоненты
+│   │   ├── data/        # данные для навигации и витрины
+│   │   ├── pages/       # страницы React-версии
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── index.html
+├── runtime/             # runtime-файлы Yii2
+├── tests/               # тесты Codeception
+├── views/               # представления Yii2
+│   ├── layouts/
+│   ├── site/
+│   └── yii2/
+├── web/                 # публичная директория
+│   ├── css/             # стили страниц
+│   ├── images/          # изображения
+│   ├── js/              # JavaScript для Yii2-версии
+│   ├── react-app/       # собранная React-версия
+│   └── index.php
+├── composer.json
+├── docker-compose.yml
+├── package.json
+├── vite.config.js
+└── Makefile
 ```
 
-You can then access the application through the following URL:
+## Быстрый запуск через Docker
 
-~~~
-http://localhost/basic/web/
-~~~
+Клонируйте репозиторий:
 
-## Install with Docker
-
-Update your vendor packages
-
-    docker-compose run --rm php composer update --prefer-dist
-    
-Run the installation triggers (creating cookie validation code)
-
-    docker-compose run --rm php composer install    
-    
-Start the container
-
-    docker-compose up -d
-    
-You can then access the application through the following URL:
-
-    http://127.0.0.1:8000
-
-Run tests inside the container
-
-    docker compose exec -T php vendor/bin/codecept build
-    docker compose exec -T php vendor/bin/codecept run
-
-**NOTES:** 
-- Minimum required Docker engine version `17.04` for development (see [Performance tuning for volume mounts](https://docs.docker.com/docker-for-mac/osxfs-caching/))
-- The default configuration uses a host-volume in your home directory `~/.composer-docker/cache` for Composer caches
-
-
-CONFIGURATION
--------------
-
-## Database
-
-Edit the file `config/db.php` with real data, for example:
-
-```php
-return [
-    'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
-    'username' => 'root',
-    'password' => '1234',
-    'charset' => 'utf8',
-];
+```bash
+git clone https://github.com/samdaught/officeMag.git
+cd officeMag
 ```
 
-**NOTES:**
-- Yii won't create the database for you, this has to be done manually before you can access it.
-- Check and edit the other files in the `config/` directory to customize your application as required.
-- Refer to the README in the `tests` directory for information specific to basic application tests.
+Установите PHP-зависимости:
 
-TESTING
--------
-
-Tests are located in `tests` directory. They are developed with [Codeception PHP Testing Framework](https://codeception.com/).
-By default, there are 3 test suites:
-
-- `unit`
-- `functional`
-- `acceptance`
-
-Tests can be executed by running
-
-```
-vendor/bin/codecept run --env php-builtin
+```bash
+docker compose run --rm php composer install
 ```
 
-The command above will execute unit and functional tests. Unit tests are testing the system components, while functional
-tests are for testing user interaction.
+Установите Node.js-зависимости:
 
-
-## Acceptance tests
-
-The `acceptance` suite is configured in `tests/Acceptance.suite.yml`.
-
-### Acceptance tests (PhpBrowser)
-
-By default, acceptance tests use the `PhpBrowser` module and run against the built-in PHP web server started via the
-`php-builtin` environment.
-
+```bash
+npm install
 ```
-# run all tests with built-in web server
+
+Соберите React-приложение:
+
+```bash
+npm run react:build
+```
+
+Запустите контейнер:
+
+```bash
+docker compose up -d
+```
+
+После запуска проект будет доступен по адресу:
+
+```text
+http://localhost/
+```
+
+Остановить контейнер можно командой:
+
+```bash
+docker compose down
+```
+
+## Локальный запуск без Docker
+
+Установите PHP-зависимости:
+
+```bash
+composer install
+```
+
+Установите Node.js-зависимости:
+
+```bash
+npm install
+```
+
+Соберите React-приложение:
+
+```bash
+npm run react:build
+```
+
+Запустите встроенный PHP-сервер из корня проекта:
+
+```bash
+php yii serve
+```
+
+Обычно приложение будет доступно по адресу:
+
+```text
+http://localhost:8080/
+```
+
+## React-сборка
+
+Исходники React-приложения находятся в директории `react/`.
+
+Для режима разработки:
+
+```bash
+npm run react:dev
+```
+
+Для production-сборки:
+
+```bash
+npm run react:build
+```
+
+Собранные файлы попадают в директорию:
+
+```text
+web/react-app/
+```
+
+Yii2 подключает эту сборку на странице React-версии.
+
+## Маршруты
+
+Основные точки входа:
+
+```text
+/        # главная страница проекта
+/yii2    # Yii2-версия
+/react   # React-версия
+```
+
+Страницы Yii2-версии:
+
+```text
+/yii2/text
+/yii2/form
+/yii2/buttons
+/yii2/scheme
+/yii2/slider
+/yii2/toggle
+/yii2/beauty
+/yii2/black-page
+```
+
+React-версия использует клиентскую маршрутизацию через React Router.
+
+## Команды
+
+В проекте есть `Makefile` с короткими командами:
+
+```bash
+make up        # запустить Docker-контейнеры
+make down      # остановить Docker-контейнеры
+make restart   # перезапустить Docker-контейнеры
+make react     # собрать React-приложение
+```
+
+Также доступны npm-команды:
+
+```bash
+npm run react:dev      # запуск React в dev-режиме
+npm run react:build    # сборка React-приложения
+npm run react:preview  # предпросмотр React-сборки
+```
+
+И Composer-команды:
+
+```bash
+composer cs       # проверка code style
+composer cs-fix   # автоисправление code style
+composer static   # статический анализ PHPStan
+composer tests    # запуск тестов Codeception
+```
+
+## Проверка кода и тесты
+
+Запуск тестов:
+
+```bash
 composer tests
-
-# run acceptance tests only
-vendor/bin/codecept run Acceptance --env php-builtin
 ```
 
-### Acceptance tests (WebDriver + Selenium)
+Запуск статического анализа:
 
-To run acceptance tests in a real browser, switch the `acceptance` suite to use the `WebDriver` module.
-`tests/Acceptance.suite.yml` contains an example WebDriver configuration (commented).
-
-1. Download and start [Selenium Server](https://www.selenium.dev/downloads/).
-2. Install the corresponding browser driver (for example. [GeckoDriver](https://github.com/mozilla/geckodriver/releases) or
-   [ChromeDriver](https://googlechromelabs.github.io/chrome-for-testing/)).
-3. Update `tests/Acceptance.suite.yml` to enable `WebDriver` and disable `PhpBrowser`.
-4. Run:
-
-```
-vendor/bin/codecept run Acceptance --env php-builtin
+```bash
+composer static
 ```
 
-## Code coverage support
+Проверка стиля кода:
 
-Code coverage is configured in `codeception.yml`. You can run your tests and collect coverage with the following command:
-
-```
-#collect coverage for all tests
-vendor/bin/codecept run --coverage --coverage-html --coverage-xml --env php-builtin
-
-#collect coverage only for unit tests
-vendor/bin/codecept run Unit --coverage --coverage-html --coverage-xml --env php-builtin
-
-#collect coverage for unit and functional tests
-vendor/bin/codecept run Functional,Unit --coverage --coverage-html --coverage-xml --env php-builtin
+```bash
+composer cs
 ```
 
-You can see code coverage output under the `tests/Support/output` directory.
+Автоисправление стиля кода:
 
-## Documentation
+```bash
+composer cs-fix
+```
 
-- [Internals](docs/internals.md)
+## Примечания по разработке
 
-## Support the project
-
-[![Open Collective](https://img.shields.io/badge/Open%20Collective-sponsor-7eadf1?style=for-the-badge&logo=open%20collective&logoColor=7eadf1&labelColor=555555)](https://opencollective.com/yiisoft)
-
-## Follow updates
-
-[![Official website](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=for-the-badge&logo=yii)](https://www.yiiframework.com/)
-[![Follow on X](https://img.shields.io/badge/-Follow%20on%20X-1DA1F2.svg?style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/yiiframework)
-[![Telegram](https://img.shields.io/badge/telegram-join-1DA1F2?style=for-the-badge&logo=telegram)](https://t.me/yii_framework_in_english)
-[![Slack](https://img.shields.io/badge/slack-join-1DA1F2?style=for-the-badge&logo=slack)](https://yiiframework.com/go/slack)
-
-## License
-
-[![License](https://img.shields.io/badge/License-BSD--3--Clause-brightgreen.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=555555)](LICENSE.md)
+- При изменении React-исходников нужно заново выполнить `npm run react:build`, чтобы обновить файлы в `web/react-app/`.
+- CSS для страниц вынесен в отдельные файлы внутри `web/css/`.
+- JavaScript для Yii2-версии находится в `web/js/`.
+- Публичной директорией приложения является `web/`.
