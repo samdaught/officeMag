@@ -462,8 +462,11 @@
     }
 
     .form__fieldset--extra legend {
+        width: calc(100% + 36px);
+        margin-left: -18px;
+        margin-right: -18px;
         margin-bottom: 18px;
-        padding: 0 0 4px;
+        padding: 0 18px 4px;
     }
 
     .form__fieldset,
@@ -512,6 +515,14 @@
 
     .form__fieldset,
     .form__bottom {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .form__fieldset--extra legend {
+        width: calc(100% + 28px);
+        margin-left: -14px;
+        margin-right: -14px;
         padding-right: 14px;
         padding-left: 14px;
     }
