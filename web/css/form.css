@@ -132,6 +132,11 @@
         0 9px 12px -14px rgba(0, 0, 0, 0.3);
 }
 
+.form__fieldset--extra legend {
+    margin-bottom: 18px;
+    background: #fff8c8;
+}
+
 .form__fieldset legend {
     display: block;
     float: left;
@@ -444,6 +449,21 @@
     .form-card h2 {
         padding: 20px 18px 10px;
         font-size: 22px;
+    }
+
+    .form__fieldset {
+        padding-top: 18px;
+        padding-bottom: 20px;
+    }
+
+    .form__fieldset--extra {
+        padding-top: 0;
+        margin-top: -1px;
+    }
+
+    .form__fieldset--extra legend {
+        margin-bottom: 18px;
+        padding: 0 0 4px;
     }
 
     .form__fieldset,
